@@ -1,3 +1,5 @@
+const { safeFetch } = require("../utils/safeFetch");
+
 const TARGETS = [
   {
     path: '/.env',
@@ -21,7 +23,7 @@ async function checkExposedFiles(url) {
 
   for (const target of TARGETS) {
     try {
-      const response = await fetch(origin + target.path, {
+      const response = await safeFetch(origin + target.path, {
         redirect: 'manual',
         signal: AbortSignal.timeout(8000),
       });

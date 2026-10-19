@@ -1,3 +1,5 @@
+const { safeFetch } = require('../utils/safeFetch');
+
 const CHECKS = [
   {
     header: 'strict-transport-security',
@@ -36,7 +38,7 @@ const CHECKS = [
 ];
 
 async function checkHeaders(url){
-  const response = await fetch(url, {
+  const response = await safeFetch(url, {
     redirect: 'follow',
     signal: AbortSignal.timeout(10000),
   });

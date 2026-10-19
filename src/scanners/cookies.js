@@ -1,5 +1,7 @@
+const { safeFetch } = require('../utils/safeFetch');
+
 async function checkCookies(url) {
-  const response = await fetch(url, {
+  const response = await safeFetch(url, {
     redirect: 'follow',
     signal: AbortSignal.timeout(10000),
   });

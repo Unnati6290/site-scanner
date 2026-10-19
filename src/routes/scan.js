@@ -36,7 +36,11 @@ router.post('/', async (req, res) => {
     });
 
     res.json({ id: scan._id, url: scan.url, issueCount: scan.issueCount, issues: scan.issues });
-  } catch (err) {
+    } catch (err) {
+    if (err.code === 'BLOCKED_TARGET') {
+      return res.status(400).json({ error: 'This target is not allowed' });
+    }
+    console.error(err);
     res.status(502).json({ error: 'Could not reach the target site' });
   }
 });
