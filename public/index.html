@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Site Scanner</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <main>
+    <h1>Site Scanner</h1>
+
+    <section id="auth-section">
+      <input id="email" type="email" placeholder="Email" />
+      <input id="password" type="password" placeholder="Password (min 8 characters)" />
+      <div class="row">
+        <button id="login-btn">Log in</button>
+        <button id="register-btn" class="secondary">Register</button>
+      </div>
+    </section>
+
+    <section id="dashboard" hidden>
+      <div class="row-between">
+        <span>You are logged in</span>
+        <button id="logout-btn" class="secondary">Log out</button>
+      </div>
+
+      <h2>Your sites</h2>
+      <div class="row">
+        <input id="site-url" type="url" placeholder="https://yoursite.com" />
+        <button id="add-site-btn">Add site</button>
+      </div>
+      <div id="sites-list"></div>
+
+      <h2>Results</h2>
+      <div id="results"><p class="muted">Run a scan to see results here.</p></div>
+
+      <h2>History</h2>
+      <div id="history"></div>
+    </section>
+
+    <p id="message"></p>
+  </main>
+  <script src="/app.js"></script>
+</body>
+</html>

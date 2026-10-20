@@ -54,7 +54,7 @@ router.post('/', async (req, res) => {
 router.get('/', async (req, res) => {
   const sites = await Site.find({ user: req.userId })
     .sort({ createdAt: -1 })
-    .select('origin verified verifiedAt');
+    .select('origin verified verifiedAt token');
   res.json(sites);
 });
 
