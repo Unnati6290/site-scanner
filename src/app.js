@@ -8,6 +8,7 @@ const siteRoutes = require('./routes/sites');
 const path = require('node:path');
 
 const app = express();
+app.set('trust proxy', 1);
 
 app.use(helmet());
 app.use(express.static(path.join(__dirname, '..', 'public')));
