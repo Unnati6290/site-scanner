@@ -17,7 +17,8 @@ app.use(rateLimit({ windowMs: 15 * 60 * 1000, limit: 100}));
 app.use('/api/sites', requireAuth, siteRoutes);
 
 app.get('/health', (req, res) => res.json({ status: 'ok' }));
-app.use('/api/auth', authRoutes);
+const authLimiter = rateLimit({ windowMs: 15 * 60 * 1000, limit: 20 });
+app.use('/api/auth', authLimiter, authRoutes);
 app.use('/api/scan', requireAuth, scanRoutes);
 
 module.exports = app;
