@@ -1,4 +1,5 @@
 # Site Scanner
+![CI](https://github.com/Unnati6290/site-scanner/actions/workflows/ci.yml/badge.svg)
 
 A Node.js/Express web app that scans websites for common security
 misconfigurations and reports each issue with a severity rating and a fix.
