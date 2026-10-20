@@ -1,3 +1,4 @@
+const Site = require('../models/Site');
 const Scan = require('../models/Scan');
 const express = require('express');
 const { checkHeaders } = require('../scanners/headers');
@@ -18,6 +19,11 @@ router.post('/', async (req, res) => {
   }
   if (!['http:', 'https:'].includes(parsed.protocol)) {
     return res.status(400).json({ error: 'Only http/https URLs allowed' });
+  }
+
+    const site = await Site.findOne({ user: req.userId, origin: parsed.origin, verified: true });
+  if (!site) {
+    return res.status(403).json({ error: 'Verify ownership of this site before scanning it' });
   }
 
     try {
