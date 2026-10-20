@@ -54,5 +54,9 @@ npm test
 - `POST /api/sites`, `GET /api/sites`, `POST /api/sites/:id/verify`
 - `POST /api/scan`, `GET /api/scan`, `GET /api/scan/:id`
 
+
+**Live demo:** https://site-scanner-bqc9.onrender.com
+*(hosted on a free tier, so the first load may take up to a minute)*
+
 ## Disclaimer
 Only scan websites you own or have permission to test.
