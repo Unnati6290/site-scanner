@@ -8,7 +8,7 @@ Users must prove they own a site before it can be scanned.
 ## Screenshots
 
 ![Dashboard](docs/dashboard.png)
-![Scan results](docs/results.png)
+![Scan results](docs/result.png)
 
 ## Features
 - Security header checks (HSTS, CSP, X-Frame-Options, and more)
